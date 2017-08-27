@@ -5,10 +5,45 @@
         <script src='policy.js'></script>
         <script src='cookies.js'></script>
         <link id=classic type='text/css' rel='stylesheet' href="classic.css">
+        <link type='text/css' rel='stylesheet' href="allthemes.css">
     </head>
     <body>
         <header>
             <h1>Policy</h1><h3>An incremental world domination game</h3>
         </header>
+        <nav id="tab-bar">
+            <button onclick="changeTab(event, 'income')" class="button">Income</a>
+            <button onclick="changeTab(event, 'government')" class="button">Government</a>
+        </nav>
+        <script>
+            function changeTab(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tab");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("button");
+                for (i = 0; i < tablinks.length; i++) {
+                   tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).className += " active";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+        <div class="tabs">
+            <div id="income" class="tab">
+                <h1>Income:</h1>
+            </div>
+            <div id="government" class="tab">
+                <h1>Government:</h1>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,10 +1,18 @@
-* {box-sizing: border-box;}
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto');
 
 body {
     background-color: #aaaaaa;
+    padding: 0 150px;
 }
 
 header {
-    margin: 0 300px;
-    background-color: #555555;
+    padding: 10px 50px;
+    background-color: #3365ff;
+    color: #ffffff;
+} header > h1 {
+    font-family: 'Quicksand', 'sans-serif';
+} header > h3 {
+    font-family: 'Roboto', 'sans-serif';
+    text-align: right;
+    margin-top: -50px;
 }

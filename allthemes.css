@@ -1,0 +1,5 @@
+
+* {box-sizing: border-box;}
+
+.tabs > div { display:none; }
+.tabs > div.active { display:block; }
