@@ -12,11 +12,10 @@
             <h1>Policy</h1><h3>An incremental world domination game</h3>
         </header>
         <nav id="tab-bar">
-            <button onclick="changeTab(event, 'income')" class="button" id="defaultOpen">Income</a>
-            <button onclick="changeTab(event, 'government')" class="button">Government</a>
+            <button onclick="javascript:changeTab(event, 'income')" class="button active" id="defaultOpen">Income</a>
+            <button onclick="javascript:changeTab(event, 'government')" class="button">Government</a>
         </nav>
         <script>
-            document.getElementById("defaultOpen").click();
             function changeTab(evt, cityName) {
                 // Declare all variables
                 var i, tabcontent, tablinks;
@@ -39,8 +38,13 @@
             }
         </script>
         <div class="tabs">
-            <div id="income" class="tab">
-                <h1>Income:</h1>
+            <div id="income" class="tab active">
+                <h1>Income</h1>
+                <h3 class='money'>Current budget: $<span id='money'></span></h3>
+                <h4 class='money'>Income: $<span id='inpersec'></span></h4>
+
+                <h3 class='job'>Current job: <span id='job'></span> ($<span id='injobpersec'></span> per sec)</h3>
+                <a href='jobs.html'>Change my job</a>
             </div>
             <div id="government" class="tab">
                 <h1>Government:</h1>
