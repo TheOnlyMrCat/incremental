@@ -12,10 +12,11 @@
             <h1>Policy</h1><h3>An incremental world domination game</h3>
         </header>
         <nav id="tab-bar">
-            <button onclick="changeTab(event, 'income')" class="button">Income</a>
+            <button onclick="changeTab(event, 'income')" class="button" id="defaultOpen">Income</a>
             <button onclick="changeTab(event, 'government')" class="button">Government</a>
         </nav>
         <script>
+            document.getElementById("defaultOpen").click();
             function changeTab(evt, cityName) {
                 // Declare all variables
                 var i, tabcontent, tablinks;
