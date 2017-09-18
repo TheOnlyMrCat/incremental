@@ -5,53 +5,37 @@
         <meta name="description" content="A game where you manage your income, do well in your job, and all thet taking over the world stuff">
         <meta name="keywords" content="policy, game, incremental, job, theonlymrcat">
         <meta name="author" content="TheOnlyMrCat">
+
         <script src='policy.js'></script>
         <script src='cookies.js'></script>
+        <script src='tabs.js'></script>
         <link id=classic type='text/css' rel='stylesheet' href="classic.css">
         <link type='text/css' rel='stylesheet' href="allthemes.css">
     </head>
     <body>
         <header>
-            <h1>Policy</h1><h3>An incremental world domination game</h3>
+            <h1 id=policy>Policy</h1><h3>An incremental world domination game</h3>
         </header>
         <nav id="tab-bar">
-            <button onclick="javascript:changeTab(event, 'income')" class="button active" id="defaultOpen">Income</a>
-            <button onclick="javascript:changeTab(event, 'government')" class="button">Government</a>
+            <li><button onclick="changeTab('budget')" class="button active" id="budgetlink">Budget: $<span id="money-tab"></span></button></li>
+            <li><button onclick="changeTab('jobs')" class="button" id="jobslink">Job</button></li>
         </nav>
-        <script>
-            function changeTab(evt, cityName) {
-                // Declare all variables
-                var i, tabcontent, tablinks;
-
-                // Get all elements with class="tabcontent" and hide them
-                tabcontent = document.getElementsByClassName("tab");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].className = tabcontent[i].className.replace(" active", "");
-                }
-
-                // Get all elements with class="tablinks" and remove the class "active"
-                tablinks = document.getElementsByClassName("button");
-                for (i = 0; i < tablinks.length; i++) {
-                   tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-
-                // Show the current tab, and add an "active" class to the button that opened the tab
-                document.getElementById(cityName).className += " active";
-                evt.currentTarget.className += " active";
-            }
-        </script>
         <div class="tabs">
-            <div id="income" class="tab active">
-                <h1>Income</h1>
-                <h3 class='money'>Current budget: $<span id='money'></span></h3>
-                <h4 class='money'>Income: $<span id='inpersec'></span></h4>
+            <tab-div id="budget" class="active">
+                <h1>Budget</h1>
+                <h3 class='money'>Current budget: $<span id='money'></span></h3> <h4 class='money'>(Income: $<span id='inpersec'></span>)</h4>
 
                 <h3 class='job'>Current job: <span id='job'></span> ($<span id='injobpersec'></span> per sec)</h3>
-                <a href='jobs.html'>Change my job</a>
-            </div>
-            <div id="government" class="tab">
-                <h1>Government:</h1>
-            </div>
+                <a href='javascript:changeTab("jobs")'>Change my job</a>
+            </tab-div>
+            <tab-div id="jobs" class="">
+                <h1>Jobs</h1>
+                <job-select style='width: 100px; height: 200px' id='jobs-list'>
+                    <ul>
+                        <li><h3>Fast food worker</h3><h4>$10 per sec</h4></li>
+                    </ul>
+                </job-select>
+            </tab-div>
         </div>
     </body>
 </html>

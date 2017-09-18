@@ -1,5 +1,6 @@
 
 * {box-sizing: border-box;}
 
-.tabs > div { display:none; }
-.tabs > div.active { display:block; }
+
+tab-div { display:none; }
+tab-div.active { display:block; }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Palanquin|Quicksand|Roboto');
 
 body {
     background-color: #aaaaaa;
@@ -17,18 +17,54 @@ header {
     margin-top: -50px;
 }
 
-nav > button {
-    margin-top: 15px; margin-right: 10px;
-    background-color: #05d;
-    padding: 10px 50px;
+div.tabs {
+    margin-top: -75px;
+    padding-left: 10px;
+    margin-left: 148px;
+    border-left: 2px royalblue solid;
+} nav {
+    display: block;
+    list-style: none;
+} nav > li > button {
+    margin-top: 50x; margin-right: 10px;
+    background-color: darkgray;
+    width: 150px;
+    padding: 10px 0;
     color: white;
-    border: 2px royalblue solid;
-    border-bottom: none;
-} nav > button.active {
+    border: none;
+    border-right: 2px royalblue solid;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+} nav > li > button:hover {
+    background-color: cadetblue;
+} nav > li > button.active {
     background-color: dodgerblue;
+    border: 2px royalblue solid;
+    border-right: 2px dodgerblue solid;
 }
 
-div.tab > h1{
+tab-div > h1 {
     font-family: 'Quicksand', 'sans-serif';
-    font-size: 15pt;
+} tab-div > h3 {
+    font-family: 'Roboto', 'sans-serif';
+} tab-div > h4 {
+    font-family: 'Palanquin', 'sans-serif';
+} tab-div > .money {
+    display: inline;
+} tab-div > a {
+    text-decoration: none;
+    color: white;
+    background-color: dodgerblue;
+    border: 1px royalblue solid;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+#jobs-list {
+    border-radius: 5px;
+    list-style-type: none;
+    width: 100px;
+    height: 300px;
+} #jobs-list > li {
+    font-family: 'Helvetica Neue', 'Helvetica', 'sans-serif'
 }
